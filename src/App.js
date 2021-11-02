@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
+
+import "./App.css"
+import Home from "./pages/home"
+import NoJSX from "./pages/no-jsx"
+import State from "./pages/state"
+import ReRender from "./pages/re-render"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <nav>
+        <Link to="/">Simple React Demo</Link>
+      </nav>
+      <main>
+        <Switch>
+          <Route path="/no-jsx" component={NoJSX} />
+          <Route path="/state" component={State} />
+          <Route path="/re-render" component={ReRender} />
+          <Route path="/" component={Home} />
+        </Switch>
+      </main>
+    </Router>
+  )
 }
 
-export default App;
+export default App

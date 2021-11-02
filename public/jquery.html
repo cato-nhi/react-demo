@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>JQuery</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>Header</h1>
+            <p>Lorem ipsum</p>
+            <button id="button">Click me!</button>
+            <div>Count: <span id="count"></span></div>
+        </section>
+    </main>
+</body>
+
+<script type="text/javascript">
+    $(() => {
+        let count = 0
+
+        // Set initial count
+        $("#count").html(count)
+
+        // Add handle on click-event on button
+        $("#button").click(handleClick)
+
+        // Function to handle click and update UI
+        function handleClick() {
+            count++
+            $("#count").html(count)
+        }
+    })
+</script>
+
+</html>
